@@ -12,11 +12,8 @@ import Router from 'vue-router';
 // 使用如下函数的形式引入，打包时会分包
 const BlogIndex = () =>
   import(/* webpackChunkName: "blogPages" */ '@/components/MainPage/BlogIndex');
-
 const BlogIndexCopy = () =>
   import(/* webpackChunkName: "blogPages" */ '@/components/MainPage/BlogIndex-copy');
-
-
 const BlogDetail = () =>
   import(/* webpackChunkName: "blogPages" */ '@/components/MainPage/BlogDetail');
 const MessageBoard = () =>
@@ -36,57 +33,114 @@ import student from '@/components/ExperimentalField/student';
 
 Vue.use(Router);
 
-export default new Router({
-  mode: 'hash',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: [
-    {
-      path: '/',
-      name: 'BlogIndex',
-      component: BlogIndex
-    },{
-      path:"/BlogIndexCopy",
-      name:'BlogIndexCopy',
-      component:BlogIndexCopy
-    },{
-      path: '/BlogDetail',
-      name: 'BlogDetail',
-      component: BlogDetail
-    }, {
-      path: '/MessageBoard',
-      name: 'MessageBoard',
-      component: MessageBoard
-    }, {
-      path: '/FriendUrl',
-      name: 'FriendUrl',
-      component: FriendUrl
-    }, {
-      path: '/TimeLine',
-      name: 'TimeLine',
-      component: TimeLine
-    }, {
-      path: '/AboutMe',
-      name: 'AboutMe',
-      component: AboutMe
-    }, {
-      path: '/analytics',
-      name: 'analytics',
-      component: analytics
-    }, {
-      path: '/experimentalField',
-      name: 'ExperimentalField',
-      component: ExperimentalField,
-      children: [
-        {
-          path: '/experimentalField/imageToPdf',
-          name: 'imageToPdf',
-          component: imageToPdf
-        }
-      ]
-    }, {
-      path: '/student',
-      name: 'student',
-      component: student
-    }
-  ]
-});
+// export default new Router({
+//   mode: 'history',
+//   scrollBehavior: () => ({ y: 0 }),
+//   routes: [
+//     {
+//       path: '/',
+//       name: 'BlogIndex',
+//       component: BlogIndex
+//     },{
+//       path:"/BlogIndexCopy",
+//       name:'BlogIndexCopy',
+//       component:BlogIndexCopy
+//     },{
+//       path: '/BlogDetail',
+//       name: 'BlogDetail',
+//       component: BlogDetail
+//     }, {
+//       path: '/MessageBoard',
+//       name: 'MessageBoard',
+//       component: MessageBoard
+//     }, {
+//       path: '/FriendUrl',
+//       name: 'FriendUrl',
+//       component: FriendUrl
+//     }, {
+//       path: '/TimeLine',
+//       name: 'TimeLine',
+//       component: TimeLine
+//     }, {
+//       path: '/AboutMe',
+//       name: 'AboutMe',
+//       component: AboutMe
+//     }, {
+//       path: '/analytics',
+//       name: 'analytics',
+//       component: analytics
+//     }, {
+//       path: '/experimentalField',
+//       name: 'ExperimentalField',
+//       component: ExperimentalField,
+//       children: [
+//         {
+//           path: '/experimentalField/imageToPdf',
+//           name: 'imageToPdf',
+//           component: imageToPdf
+//         }
+//       ]
+//     }, {
+//       path: '/student',
+//       name: 'student',
+//       component: student
+//     }
+//   ]
+// });
+
+export default function createRouter(){
+  return new Router({
+    mode: 'history',
+    scrollBehavior: () => ({ y: 0 }),
+    routes: [
+      {
+        path: '/',
+        name: 'BlogIndex',
+        component: BlogIndex
+      },{
+        path:"/BlogIndexCopy",
+        name:'BlogIndexCopy',
+        component:BlogIndexCopy
+      },{
+        path: '/BlogDetail',
+        name: 'BlogDetail',
+        component: BlogDetail
+      }, {
+        path: '/MessageBoard',
+        name: 'MessageBoard',
+        component: MessageBoard
+      }, {
+        path: '/FriendUrl',
+        name: 'FriendUrl',
+        component: FriendUrl
+      }, {
+        path: '/TimeLine',
+        name: 'TimeLine',
+        component: TimeLine
+      }, {
+        path: '/AboutMe',
+        name: 'AboutMe',
+        component: AboutMe
+      }, {
+        path: '/analytics',
+        name: 'analytics',
+        component: analytics
+      }, {
+        path: '/experimentalField',
+        name: 'ExperimentalField',
+        component: ExperimentalField,
+        children: [
+          {
+            path: '/experimentalField/imageToPdf',
+            name: 'imageToPdf',
+            component: imageToPdf
+          }
+        ]
+      }, {
+        path: '/student',
+        name: 'student',
+        component: student
+      }
+    ]
+  })
+}
