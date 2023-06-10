@@ -1,0 +1,394 @@
+@import './base.less';
+
+/*pc端*/
+@media only screen and (min-device-width : 768px) {
+  .BlogIndexContent {
+    width: 1088px;
+    margin: 0 auto;
+  }
+  .BlogFlex{
+    .myflex(flex-start);
+  }
+  .BlogIndexContentLeft {
+    width: 75%;
+    margin-right: 1rem;
+    min-height: 52rem;
+    position: relative;
+  }
+
+  .BlogIndexContentLeftDefaultGraph{
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+
+  .BlogIndexContentRight {
+    width: 25%;
+  }
+
+  .blogindex-page{
+    position: sticky;
+    position: -webkit-sticky;
+    top: -200px;
+  }
+
+  .ArticleItem{
+    margin-top: 1rem;
+    background-color: @fore_color;
+    padding: 1rem;
+    border: 1px solid @fore_color;
+    font-size: 0.95rem;
+    .myflex(start);
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: @fore_color;
+
+    transition: ease-in .3s;
+    background: linear-gradient(0, @ThemeColor 1px, @ThemeColor 1px) no-repeat,  
+    linear-gradient(-90deg, @ThemeColor 1px, @ThemeColor 1px) no-repeat,
+    linear-gradient(-180deg, @ThemeColor 1px, @ThemeColor 1px) no-repeat,
+    linear-gradient(-270deg, @ThemeColor 1px, @ThemeColor 1px) no-repeat;
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-position: left top, right top, right bottom, left bottom;
+    background-color: @fore_color;
+    background-size: 0 1px, 1px 0, 0 1px, 1px 0;
+  }
+
+  .ArticleItem:hover{
+    cursor: pointer;    
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+  }
+
+  .ArticleItemCover{
+    width: 12rem;
+    height: 7.5rem;
+    margin-right: 1rem;
+  }
+
+  .ArticleItemCover img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+  }
+
+  .Module{
+    background-color: @fore_color;
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-right: 0.5rem;
+    color:@FontColorGray;
+    position: relative;
+  }
+
+  .Module img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+  }
+
+  .HotArticleModule{
+    min-height: 245px;
+  }
+
+  .ArticleTagModule{
+    min-height: 175px;
+  }
+
+  .NoDataHint{
+    padding: 1rem;
+    background-color: @back_color;
+    margin-top: 1rem;
+  }
+  .TopBarHeight{
+    height: 60px;
+  }
+
+  .ListBottom{
+    background-color: @fore_color;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid @BorderColor;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/*移动端*/
+@media only screen and (max-device-width : 768px) {
+  .BlogIndexContent {
+    padding: 0 1rem;
+  }
+  .BlogIndexContentLeft {
+    width: 100%;
+    position: relative;
+    margin-top: 1rem;
+    min-height: 90vh;
+  }
+  .BlogIndexContentLeftDefaultGraph{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .BlogIndexContentRight {
+    width: 100%;
+    display: none;
+  }
+
+  .ArticleItem{
+    margin-top: 1rem;
+    background-color: @fore_color;
+    padding: 1rem;
+    border: 1px solid @fore_color;
+    font-size: 0.95rem;
+  }
+
+  .ArticleItemCover{
+    width: 100%;
+    height: 11.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ArticleItemCover img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .Module{
+    background-color: @fore_color;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    padding-right: 0.5rem;
+    color:@FontColorGray;
+  }
+
+  .NoDataHint{
+    padding: 1rem;
+    background-color: @back_color;
+  }
+
+  .TopBarHeight{
+    height: 4.4rem;
+  }
+
+  .ListBottom{
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color:@FontColorGrayDeep
+  }
+}
+
+.ArticleTitle{
+  .myflex(center);
+  height: 1.5rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+
+.ArticleTag{
+  padding:0 0.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  background-color: @ThemeColor;
+  color: @FontColorWhite;
+  font-size: 0.8rem;
+}
+
+.ArticleTitleText{
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color:@FontColorGray;
+}
+
+.ArticleContent{
+  margin-top: 0.5rem;
+  min-height: 4.5rem;
+  color:@FontColorGrayDeep;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.ArticleFooter{
+  .myflex(center);
+  height: 1rem;
+  line-height: 1rem;
+}
+
+.ArticleFooterItem{
+  border: 1px solid @BorderColor;
+  padding: 0.1rem 0.3rem;
+  margin-right: 0.5rem;
+  color:@FontColorGray;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.iconBlogIndex{
+  color:#aaa;
+  margin-right:0.3rem;
+  font-size: 0.8rem
+}
+
+.TopBack{
+  height: 8rem;
+  background-image: url(../img/zhihu-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% 110px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.TopBack img{
+  width: 100%;
+  height: 100%;
+}
+.ZhihuIcon{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  margin-top: -4.5rem;
+  z-index: 100;
+}
+.ZhihuIcon img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: unset;
+}
+.TextCenter{
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.BlogStatistic{
+  .myflex(center);
+  color:@FontColorGrayWhite;
+  padding: 1.5rem 0 1rem;
+  border-top: 1px solid @BorderColor;
+}
+
+.BlogStatistic .borderRight{
+  border-right: 1px solid @BorderColor;
+}
+
+.BlogStatistic .borderRight:last-child{
+  border-right: none;
+}
+
+.BlogStatisticItem{
+  flex: 1;
+  text-align: center;
+}
+.BlogStatisticItem a{
+  text-decoration: none;
+}
+.BlogStatisticItemNum{
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.BlogStatisticItemText{
+  font-size: 0.8rem;
+}
+
+.TagListHead{
+  padding: 0rem 0 0.5rem;
+  border-bottom: 1px solid @ThemeColor;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  color:@ThemeColor;
+}
+
+.HotArticleItem{
+  padding: 0.5rem 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.TagListTr{
+  .myflex(center);
+  flex-wrap: wrap;
+}
+.TagListTd{
+  padding: 0.5rem 0;
+  border: 1px solid @ThemeColor;
+  margin-bottom: 0.5rem;
+  flex: 1;
+  min-width: 40%;
+  margin-right: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition:all .3s;
+}
+.TagListTd:hover{
+  transform: scale(0.9);
+}
+
+.TagListTdActive{
+  padding: 0.5rem 0;
+
+  margin-bottom: 0.5rem;
+  flex: 1;
+  min-width: 40%;
+  margin-right: 0.5rem;
+
+  text-align: center;
+  cursor: pointer;
+  background-color: @ThemeColor;
+  color: @FontColorWhite;
+}
+.TagListTd:visited{
+  background-color: red;
+}
+
+.Fade-enter-active, .Fade-leave-active {
+  transition: opacity .5s;
+}
+.Fade-enter, .Fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.BlueButton{
+  color: @FontColorWhite;
+  width: 8rem;
+  margin: 0.8rem auto;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+}
+.BlueButton:hover {
+  animation: animate 8s linear infinite;
+}
+
+.open_animate{
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+.BlueButton::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 0.3rem;
+  opacity: 0;
+  transition: 0.5s;
+}
