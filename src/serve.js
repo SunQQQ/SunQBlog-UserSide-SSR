@@ -17,7 +17,7 @@ const renderer = createBundleRenderer(serverBundle, {
 });
 
 // 中间件处理静态文件请求
-app.use(express.static("../blog-user/client", { index: false })); // 为false是不让它渲染成dist/client/index.html
+app.use(express.static("../blog-user-ssr/client", { index: false })); // 为false是不让它渲染成dist/client/index.html
 // app.use(express.static('../dist/client'))  //如果换成这行代码，那么需要把dist/client/index.html 删除 ，不然会优先渲染该目录下的index.html文件
 
 // 前端请求返回数据

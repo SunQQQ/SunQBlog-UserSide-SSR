@@ -4,8 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+
+    "build:client": "vue-cli-service build",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server",
+    "build": "npm run build:server && npm run build:client",
+    "service": "cd server && node index.js"
   },
   "dependencies": {
     "axios": "0.18.0",

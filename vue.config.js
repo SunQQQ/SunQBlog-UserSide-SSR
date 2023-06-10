@@ -10,7 +10,7 @@ const target = TARGET_NODE ? "server" : "client";
 
 module.exports = {
   baseUrl: './',
-  outputDir: 'blog-user',
+  outputDir: 'blog-user-ssr',
   devServer: {
     // 设置代理
     proxy: {
